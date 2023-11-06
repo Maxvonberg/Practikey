@@ -1,0 +1,5 @@
+{
+    "particle.targetDevice": "IoT",
+    "particle.firmwareVersion": "2.3.1",
+    "particle.targetPlatform": "photon"
+}
