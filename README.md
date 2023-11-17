@@ -53,3 +53,8 @@ Unexpected events can occur due to measurement problems.
 Debugging can be done via publishing events `Particle.publish(String(arg))` or with a Serial Monitor.
 ##### Examplary setup
 ![[C:\Users\Cedri\OneDrive\Desktop\Studium\Semester 7\IoT\Projekt\images\prototype-setup.jpg]]
+
+### Pitch 19.01
+10-15 min Vortrag, 5 min Protootypvorstellung, 5 min Fragen, allgmeines Feedback. Veröffentlichung des Hackster-Artikels. 
+- The Business Model Canvas (Frage zu Kunden/Stakeholdern, Kosten, Materialen, Anschaffung, Lieferung an den Kunden, wie erreicht man die Zielgruppe, was ist der Mehrwert, Aufbau eines Business - Produktionsstelle/Arbeitsstelle/Team was brauch ich alles?, Was letzte Preis - 44,99€?) 
+    --> Ziel ist es, diese Frage in den Gruppen zu klären und Überlegungen zu den einzelnen Punkten zu haben.
