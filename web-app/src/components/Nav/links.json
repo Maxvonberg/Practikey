@@ -1,0 +1,16 @@
+{
+    "links": [
+        {
+            "label": "Home",
+            "href": "/home"
+        },
+        {
+            "label": "Settings",
+            "href": "/settings"
+        },
+        {
+            "label": "Profile",
+            "href": "/profile"
+        }
+    ]
+}
