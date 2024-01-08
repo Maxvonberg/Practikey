@@ -4,28 +4,11 @@ import { Container, Header, Main, Footer, Navbar } from './StyledComponents';
 import RoundedProfileCard from './contentbox';
 import axios from 'axios';
 
-const handleOnlineCedric = () => {
-  axios.get('http://localhost:3001/api/whoIsAtHome').then((response) => {
-    return response.data.cedricAtHome;
-  });
-};
-
-const handleOnlineLouis = () => {
-  axios.get('http://localhost:3001/api/whoIsAtHome').then((response) => {
-    return response.data.louisAtHome;
-  });
-};
-
-const handleOnlineMax = () => {
-  axios.get('http://localhost:3001/api/whoIsAtHome').then((response) => {
-    return response.data.maxAtHome;
-  });
-};
 
 const MainPage: React.FC = () => {
-  const [atHomeC, setAtHomeC] = useState([]);
-  const [atHomeL, setAtHomeL] = useState([]);
-  const [atHomeM, setAtHomeM] = useState([]);
+  const [atHomeC, setAtHomeC] = useState(true);
+  const [atHomeL, setAtHomeL] = useState(false);
+  const [atHomeM, setAtHomeM] = useState(false);
 
   useEffect(() => {
     // Fetch all items
@@ -58,9 +41,9 @@ const MainPage: React.FC = () => {
         <RoundedProfileCard
           title={'Esslingen IOT WG'}
           profiles={[
-            { name: 'Louis', online: atHomeL[0] },
-            { name: 'Cedric', online: atHomeC[0] },
-            { name: 'Max', online: atHomeM[0] },
+            { name: 'Louis', online: atHomeL },
+            { name: 'Cedric', online: atHomeC },
+            { name: 'Max', online: atHomeM },
           ]}
         />
       </Main>
