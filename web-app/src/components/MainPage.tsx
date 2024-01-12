@@ -10,9 +10,8 @@ const MainPage: React.FC = () => {
   const [atHomeL, setAtHomeL] = useState(false);
   const [atHomeM, setAtHomeM] = useState(false);
 
-  useEffect(() => {
-    // Fetch all items
-    axios
+  const fetchData = async () => {
+    await axios
       .get('http://localhost:3001/api/whoIsAtHome')
       .then((response) => {
         // Set state with result
@@ -21,6 +20,18 @@ const MainPage: React.FC = () => {
         setAtHomeM(response.data.maxAtHome);
       })
       .catch((error) => console.error('Error fetching items:', error));
+  };
+
+  useEffect(() => {
+    // Fetch all items
+    fetchData();
+
+
+      // Set up polling to fetch data periodically (every 10 seconds in this example)
+    const intervalId = setInterval(fetchData, 1000);
+
+    // Clean up interval when the component unmounts
+    return () => clearInterval(intervalId);
   }, []);
 
 
