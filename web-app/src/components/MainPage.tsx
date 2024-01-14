@@ -39,7 +39,7 @@ const MainPage: React.FC = () => {
   return (
     <Container>
       <Header>
-        <h1>PractiKey</h1>
+        <h1>Practikey</h1>
       </Header>
       <Navbar>
         <ul>
@@ -50,7 +50,7 @@ const MainPage: React.FC = () => {
       </Navbar>
       <Main>
         <RoundedProfileCard
-          title={'Esslingen IOT WG'}
+          title={'Esslingen IoT WG'}
           profiles={[
             { name: 'Louis', online: atHomeL },
             { name: 'Cedric', online: atHomeC },
