@@ -6,7 +6,7 @@ import axios from 'axios';
 
 
 const MainPage: React.FC = () => {
-  const [atHomeC, setAtHomeC] = useState(true);
+  const [atHomeC, setAtHomeC] = useState(false);
   const [atHomeL, setAtHomeL] = useState(false);
   const [atHomeM, setAtHomeM] = useState(false);
 

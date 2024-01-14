@@ -29,7 +29,7 @@ async function loginAndListDevices() {
 
     let cedricAtHome = false;
     let maxAtHome = false;
-    let LouisAtHome = false;
+    let louisAtHome = false;
 
     //Get events filtered by name
     particle.getEventStream({ name: 'Came home', auth: token }).then(function (stream) {
@@ -39,7 +39,7 @@ async function loginAndListDevices() {
         } else if (data.data === 'Max') {
           maxAtHome = true;
         } else if (data.data === 'Louis') {
-          LouisAtHome = true;
+          louisAtHome = true;
         }
         console.log('Event: ', data);
         console.log(cedricAtHome);
@@ -54,7 +54,7 @@ async function loginAndListDevices() {
         } else if (data.data === 'Max') {
           maxAtHome = false;
         } else if (data.data === 'Louis') {
-          LouisAtHome = false;
+          louisAtHome = false;
         }
         console.log('Event: ', data);
         console.log(cedricAtHome);
@@ -62,7 +62,7 @@ async function loginAndListDevices() {
     });
 
     app.get('/api/whoIsAtHome', (req, res) => {
-      res.send({ cedricAtHome, maxAtHome, LouisAtHome });
+      res.send({ cedricAtHome, maxAtHome, louisAtHome });
     });
 
 
