@@ -1,24 +1,25 @@
 # Practikey
 
-Blazingly Fast Web Smart Key Holder
+Smart Key Holder
+## Setup
 
-### Smart Schlüsselbrett
-5 Schlüsselplätze
-
-#### Hardware
+#### Hardware requirements
 - Particle Photon
 - Webserver ( Hosten auf Laptop für Prototyp )
 - Brett ( 3D Drucker )
+- Resistors
+- Breadboard
 
 #### Tech
-- Flask Webserver (Python)
-- Androit App ( ? )
-- Arduino Code in C oder Python
+- Node server (express.js)
+- Web app (react ts)
+- Controller C++ 
 
-#### Aufgabenverteilung
-Loasit: Appentwicklung, Entwicklung von Gerät, Datenbank
-Ceko: Entwicklung am Gerät, Backend, Webhooks
-Maxx: Design von Board, Appentwicklung
+#### Installation
+Run the backend code, with `npm install` and `npm start` 
+Run the frontend.
+Plug in the particle photon, setup wiring as described.
+Use the board. (make sure that the cable has contact to inserted jack plugs)
 
 #### Design - Inspiration
 https://www.thingiverse.com/thing:4775253
@@ -53,8 +54,3 @@ Unexpected events can occur due to measurement problems.
 Debugging can be done via publishing events `Particle.publish(String(arg))` or with a Serial Monitor.
 ##### Examplary setup
 ![[C:\Users\Cedri\OneDrive\Desktop\Studium\Semester 7\IoT\Projekt\images\prototype-setup.jpg]]
-
-### Pitch 19.01
-10-15 min Vortrag, 5 min Protootypvorstellung, 5 min Fragen, allgmeines Feedback. Veröffentlichung des Hackster-Artikels. 
-- The Business Model Canvas (Frage zu Kunden/Stakeholdern, Kosten, Materialen, Anschaffung, Lieferung an den Kunden, wie erreicht man die Zielgruppe, was ist der Mehrwert, Aufbau eines Business - Produktionsstelle/Arbeitsstelle/Team was brauch ich alles?, Was letzte Preis - 44,99€?) 
-    --> Ziel ist es, diese Frage in den Gruppen zu klären und Überlegungen zu den einzelnen Punkten zu haben.
