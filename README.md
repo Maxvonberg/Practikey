@@ -46,7 +46,7 @@ The prototype setup is simple to create, everything is breadboard based and uses
 Use analog outputs `A0,A1,A2` as input measures.
 Connect ``GND`` and ``3,3V`` source to the corresponding lanes.
 Use 220 Ohm Resistors as known resistors (or adapt the code correspondingly in `float knownResistance = 220;`)
-The current resistances that are mapped to different people (e.g. Max, Luis, Cedric) are `330, 220, 100`.
+The current resistances that are mapped to different people (e.g. Max, Louis, Cedric) are `330, 220, 100`.
 When the program is running on particle, you can add and remove these resistors at the corresponding slots. (Insert between ``3.3V`` lane and above known resistor).
 This should publish events that can be seen in the Particle console.
 Currently the events are `Came home` and `Left home`, followed with name of the person the resistance is mapped to.
