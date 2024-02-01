@@ -52,5 +52,3 @@ This should publish events that can be seen in the Particle console.
 Currently the events are `Came home` and `Left home`, followed with name of the person the resistance is mapped to.
 Unexpected events can occur due to measurement problems.
 Debugging can be done via publishing events `Particle.publish(String(arg))` or with a Serial Monitor.
-##### Examplary setup
-![[C:\Users\Cedri\OneDrive\Desktop\Studium\Semester 7\IoT\Projekt\images\prototype-setup.jpg]]
