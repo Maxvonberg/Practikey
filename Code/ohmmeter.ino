@@ -1,12 +1,14 @@
-int analogMeasurePins[] = {A0, A1, A2};
+int analogMeasurePins = A0;
 float measures[3];
 const float Vin = 3.3;
 float knownResistance = 220;
+float tolerance = 40.0;
 
 enum Key {
   Louis = 100,
-  Max = 220,
-  Cedric = 325
+  Max = 210,
+  Cedric = 315
+
 };
 
 bool maxAtHome = false;
@@ -15,7 +17,7 @@ bool cedricAtHome = false;
 
 void setup(){
   for(unsigned int i = 0; i < 3; i++) {  
-    pinMode(analogMeasurePins[i], INPUT);
+    pinMode(analogMeasurePins, INPUT);
   }
 }
 
@@ -45,22 +47,27 @@ void checkIsHome(bool* oldState, bool newState, const char* name) {
   *oldState = newState;
 }
 
+bool isKeyInserted(float measure, float resistanceToCheck) {
+    return (measure >= resistanceToCheck - tolerance && measure <= resistanceToCheck + tolerance);
+}
+
 void loop(){
   bool checkLouisAtHome = false;
   bool checkMaxAtHome = false;
   bool checkCedricAtHome = false;
-  
-  for(unsigned int i = 0; i < 3; i++) {  
-    int measure = measureResistance(analogMeasurePins[i]); 
-    if(measure >= Louis - 5 && measure <= Louis + 5) {
-      checkLouisAtHome = true;
-    } else if (measure >= Max - 5 && measure <= Max + 5) {
-      checkMaxAtHome = true;
-    } else if (measure >= Cedric - 5 && measure <= Cedric + 5) {
-      checkCedricAtHome = true;
-    }
-    delay(500);
+
+  int measure = measureResistance(analogMeasurePins); 
+  Particle.publish("Resistance measured: ", String(measure));
+  if(!checkLouisAtHome) {
+      checkLouisAtHome = isKeyInserted(measure, Louis);
   }
+  if(!checkMaxAtHome) {
+      checkMaxAtHome = isKeyInserted(measure, Max);
+  }
+  if(!checkCedricAtHome) {
+      checkCedricAtHome = isKeyInserted(measure, Cedric);
+  }
+  delay(500);
   checkIsHome(&louisAtHome, checkLouisAtHome, "Louis");
   checkIsHome(&cedricAtHome, checkCedricAtHome, "Cedric");
   checkIsHome(&maxAtHome, checkMaxAtHome, "Max");
